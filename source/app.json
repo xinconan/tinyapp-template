@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/home/home" 
+  ],
+  "window": {
+    "defaultTitle": "Demo"
+  }
+}

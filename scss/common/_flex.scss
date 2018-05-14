@@ -1,0 +1,23 @@
+@charset "UTF-8";
+// flex 工具类
+
+.flex{
+  display: flex;
+  // 默认垂直居中
+  align-items: center;
+}
+.flex-item{
+  flex: 1;
+}
+// 水平居中
+.flex-center-h{
+  justify-content: center;
+}
+// 横向排列
+.flex-row{
+  flex-direction: row;
+}
+// 纵向排列
+.flex-column{
+  flex-direction: column;
+}
