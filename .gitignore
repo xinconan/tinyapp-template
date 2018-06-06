@@ -1,4 +1,4 @@
 node_modules
 .tea
-.acss
+*.acss
 npm-debug.log
