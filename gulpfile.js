@@ -48,11 +48,28 @@ gulp.task('compile-scss-page', () => {
 })
 
 /**
+ * Compile styles/components/*.scss
+ */
+gulp.task('compile-scss-components', () => {
+    return gulp.src(['scss/components/*.scss'], {base: './scss/components'})
+        .pipe(plugins.autoprefixer())
+        .pipe(plugins.plumber())
+        .pipe(plugins.sass({outputStyle: 'compressed'}))
+        .pipe(plugins.if(isProduction, plugins.cssnano({ compatibility: '*' })))
+        .pipe(plugins.rename(function (path) {
+            path.dirname += '/' + path.basename;
+            path.extname = ".acss"
+        }))
+        .pipe(gulp.dest('source/components'))
+})
+
+/**
  * Compile all tasks
  */
 gulp.task('compile', [/* 'clean' */], next => {
   runSequence([
     'compile-scss-app',
+    'compile-scss-components',
     'compile-scss-page',
   ], next)
 })

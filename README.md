@@ -5,11 +5,19 @@ A simple template for alipay miniapp with `scss`。
 生成的目录结构：
 ```
 +----scss  // 存放scss源码，目录结构对应小程序的目录结构
+  +----components  // 自定义组件
+    -- diy-img.scss // your component
   +---- pages
     -- home.scss
     -- other page.scss
   app.scss
 +----source  // 存放小程序目录
+  +----components  // 自定义组件
+    +----diy-img
+      -- diy-img.acss
+      -- diy-img.axml
+      -- diy-img.js
+      -- diy-img.json
   +----pages  
     +-- home  // 首页
       -- home.acss  // build css
